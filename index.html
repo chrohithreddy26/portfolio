@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Portfolio Website</title>
+	<!---custom css link---->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+	<!------Header Section------>
+	<header>
+		<a href="#" class="logo">Devlo<span>pe</span>r..</a>
+		<ul class="navlist">
+			<li><a href="#home" class="active">Home</a></li>
+			<li><a href="#about">About Me</a></li>
+			<li><a href="#Projects">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		<div class="bx bx-menu" id="menu-icon"></div>
+	</header>
+
+	<!---------Home Section--------------->
+	<section class="home" id="home">
+		<div class="home-text">
+			<div class="slide">
+				<span class="one">Hello</span>
+				<span class="two">I'm</span>
+			</div>
+			<h1>Rohith Reddy Ch</h1>
+			<h3>Website <span>Developer.</span></h3>
+			<p>Enthusiastic IT fresher with a strong education and technical skills, seeking an entry-level position to
+				contribute to organizational growth while continuously enhancing professional capabilities. </p>
+			<div class="button">
+				<a href="#about" class="btn">About Me</a>
+			</div>
+		</div>
+	</section>
+
+	<!---------about Section --------------->
+	<section class="about" id="about">
+		<div class="about-img">
+			<img src="img/about.jpg">
+		</div>
+
+		<div class="about-text">
+			<h2>About <span>Me</span></h2>
+			<h4>Website Developer!</h4>
+			<p>Check out the best web design and development services for your needs by reviewing our list of top web developers! We offer web design consulting, a comprehensive directory of top-reviewed design firms, and services for enterprise, startup, custom design, eCommerce, and app development. Get a custom web solution with 24x7 customer support, secure payment gateway, and a free web quote. We specialize in web page design, landing page design, app development, and mobile website design.</p>
+				<a href="#" class="btn">More About</a>
+		</div>
+	</section>
+
+
+
+<!-----------Portfolio Section--------------->
+<section class="portfolio" id="portfolio">
+	<div class="main-text">
+		<h2><span>Projects</span></h2>
+	</div>
+	<div class="portfolio-content">
+	 <div class="prt">
+		<b>E-Authentication System— Android App</b><br>
+		The main objective is to implement a secure login authentication system utilizing two-factor
+		authentications. By using the concept two factor authentication could help to increase the strength of
+		the login system and implement an authentication mechanism using One Time Password (OTP) and QRcode.<br><br>
+		<b>Smart LPG Cylinder Monitoring And Explosion Management System</b><br>
+		This project consists of a microcontroller ESP32 used to monitor and control the entire system. MQ-6 is
+		used as the gas sensor, when the gas sensor senses the leakage of LPG and gives input signal to the
+		controller,which switches on the exhaust fan and stops the flow of gas using a servo motor
+	 </div>
+	
+	
+	</div>
+	
+</section> 
+<div id="resume">
+	<a href="./rohith.pdf" target="_blank">Download Resume</a>
+</div>
+
+<!------------------Contact section------------>
+<section class="contact" id="contact">
+	<div class="contact-text">
+		<h2>Contact <span>Me!</span></h2>
+		<h4>If you have any project in your mind.</h4>
+		<p>I'm a website Developer - creating bold & brave interface design for compaines all across the world.</p>
+		<div class="list">
+			<li><a href="#">7729036624</a></li>
+			<li><a href=mailto:"chrohithreddy500@gmail.com">chrohithreddy500@gmail.com</a></li>
+			<li><a href="#">Like Share & Subscribe</a></li>
+		</div>
+
+		<div class="contact-icons">
+			<a href="#"><i class='bx bxl-facebook'></i></a>
+			<a href="#"><i class='bx bxl-twitter' ></i></a>
+			<a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+			<a href="#"><i class='bx bxl-youtube' ></i></a>
+		</div>
+
+	</div>
+	<div class="contact-form">
+		<form action="">
+			<input type="name" id="name" placeholder="Your Name" required>
+			<input type="email" id="email" placeholder="Your Email" required>
+			<input type="number" id="mobile" placeholder="Your Mobile Number" required>
+			<textarea id="message" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
+			<input type="submit" value="Send Message" class="submit" id="submitBtn" required>
+		</form>
+
+	</div>
+</section>
+
+<!---------End Section---------->
+<section class="end">
+	<div class="last-text">
+		<p>Design By Rohith Reddy</p>
+	</div>
+	<div class="top">
+		<a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const mobileInput = document.getElementById('mobile');
+    const messageInput = document.getElementById('message');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (validateForm()) {
+            // Form is valid, show success alert
+            alert('success', 'Message sent successfully!');
+            form.reset(); // Reset the form after successful submission
+        } else {
+            // Form is invalid, show failure alert
+            alert('error', 'Please fill in all fields correctly.');
+        }
+    });
+
+    function validateForm() {
+        let isValid = true;
+
+        if (nameInput.value.trim() === '') {
+            alert(nameInput, 'Please enter your name');
+            isValid = false;
+        }
+
+        if (!isValidEmail(emailInput.value.trim())) {
+            alert(emailInput, 'Please enter a valid email address');
+            isValid = false;
+        }
+
+        if (!isValidMobile(mobileInput.value.trim())) {
+            alert(mobileInput, 'Please enter a valid mobile number');
+            isValid = false;
+        }
+
+        if (messageInput.value.trim() === '') {
+            alert(messageInput, 'Please enter your message');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    function showError(input, message) {
+        const formControl = input.parentElement;
+        const errorMsg = formControl.querySelector('span');
+        errorMsg.textContent = message;
+        formControl.className = 'form-control error';
+    }
+
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function isValidMobile(mobile) {
+        const re = /^\d{10}$/;
+        return re.test(mobile);
+    }
+
+    function showAlert(type, message) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert ${type}`;
+        alertDiv.textContent = message;
+
+        const formContainer = document.querySelector('.contact-form');
+        formContainer.insertAdjacentElement('afterend', alertDiv);
+
+        // Remove the alert after 3 seconds
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 3000);
+    }
+});
+
+</script>
+</body>
+
+</html>

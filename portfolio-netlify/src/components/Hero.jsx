@@ -8,7 +8,7 @@ export default function Hero({ profile, education }) {
         </h1>
         <p className="lead">{profile.tagline}</p>
         <p className="meta">
-          <span>📍 {profile.location}</span>
+          <span>phone : +1(205) 377 8565 </span>
           <span>✉️ <a href={`mailto:${profile.email}`}>{profile.email}</a></span>
           {education && (
             <span>🎓 {education.degree}, {education.school}</span>
